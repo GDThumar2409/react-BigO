@@ -11,12 +11,15 @@ class App extends Component {
       name: 'Home'
     };
   }
-  
+   
+  changecomp(){
+    return <Home/>;
+  };
   render() {
     return (
       <div>
         <Header />
-        <Home />
+        {this.changecomp()}
       </div>
     );
   }

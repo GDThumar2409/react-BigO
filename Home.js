@@ -28,7 +28,7 @@ class Home extends Component {
         <div className="media content-section">
           <div className="media-body">
             <div className="article-metadata" style={articlestyle}>
-              <img style={imgstyle} className="thumbnail account-img" src="download.png" />
+              <img style={imgstyle} className="thumbnail account-img" src="https://stackblitz.com/files/react-scepxt/github/GDThumar2409/react-BigO/master/download.png" />
               <a className="article-title" href="#">Lab 1</a>
               <hr />
             
@@ -38,7 +38,7 @@ class Home extends Component {
         <div className="media content-section">
           <div className="media-body">
             <div className="article-metadata" style={articlestyle}>
-              <img style={imgstyle} className="thumbnail account-img" src="download.png" />
+              <img style={imgstyle} className="thumbnail account-img" src="https://stackblitz.com/files/react-scepxt/github/GDThumar2409/react-BigO/master/download.png" />
               <a className="article-title" href="#">Lab 2</a>
             </div>
           </div>
