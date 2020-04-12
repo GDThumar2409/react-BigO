@@ -4,10 +4,16 @@ import {
   NavLink,
   Link
 } from "react-router-dom";
+import { connect } from 'react-redux';
+import * as actions from './store/actions/auth';
 
 class Header extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.onTryAutoSignup();
   }
 
   render() {
@@ -30,8 +36,15 @@ class Header extends Component {
           </div>
           
           <div className="navbar-nav">
-
-            <a className="nav-item nav-link" href="#">Logout</a>
+            {
+                    this.props.isAuthenticated ?
+    
+                    <a className="nav-item nav-link" onClick={this.props.logout}>Logout</a>
+    
+                    :
+    
+                    <Link className="nav-item nav-link" to="/login">Login</Link>
+                }
 
           </div>
         </div>
@@ -43,4 +56,17 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.token !== null
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onTryAutoSignup: () => dispatch(actions.authCheckState()),
+    logout: () => dispatch(actions.logout()) 
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
